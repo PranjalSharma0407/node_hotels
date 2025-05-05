@@ -4,7 +4,7 @@ const Person = require('../models/person');
 
  // PERSON POST REQUEST SERVER SE UTHA KR IDHR PASTE KRDI
  // app ki jgh pr router likh denge
-router.post('/person', async(req,res)=>{
+router.post('/', async(req,res)=>{
   try{
 
     const data = req.body; // because data body parser  se hote hue req.body m jaa rha hai.

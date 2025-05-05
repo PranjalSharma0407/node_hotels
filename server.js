@@ -62,6 +62,7 @@
 const express = require('express')
 const app = express()
 const db = require('./db');
+require('dotenv').config();
 
 const bodyParser = require('body-parser'); // installed the body parser
 app.use(bodyParser.json());// req.body
@@ -94,7 +95,9 @@ const menuRoutes = require('./routes/menuRoutes');
 // use the router
  app.use('/person',personRoutes); // postman request mai  yeh naam use hoga
  app.use('/menu',menuRoutes); // same postman request mai menu naam use hoga
+// Env File se porn number acess kiya
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, ()=>{
+app.listen(PORT, ()=>{
     console.log("Server is Running & listening to port 3000");
 }) // To run this write localhost:3000/idli this will run it on crome
